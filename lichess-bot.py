@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 from http.client import RemoteDisconnected
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 terminated = False
 
@@ -365,7 +365,7 @@ def choose_move_time(engine, board, search_time, ponder, draw_offered):
 
 def choose_first_move(engine, board, draw_offered):
     # need to hardcode first movetime (10000 ms) since Lichess has 30 sec limit.
-    search_time = 7500
+    search_time = 10000
     logger.info("Searching for time {}".format(search_time))
     return engine.first_search(board, search_time, draw_offered)
 

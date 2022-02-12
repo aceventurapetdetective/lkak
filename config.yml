@@ -16,6 +16,7 @@ engine:                      # Engine settings.
         - atomic.bin
       antichess:
         - antichess.bin
+        - antibest.bin
       horde:
         - horde.bin
       kingofthehill:
@@ -24,18 +25,20 @@ engine:                      # Engine settings.
         - racingKings.bin
       3check:
         - threeCheck.bin
+      crazyhouse:
+        - allplay.bin 
 #     etc.
 #     Use the same pattern for 'giveaway' (antichess), 'crazyhouse', 'horde', 'kingofthehill', 'racingkings' and '3check' as well.
-    min_weight: 10           # Does not select moves with weight below min_weight (min 0, max: 65535).
+    min_weight: 100           # Does not select moves with weight below min_weight (min 0, max: 65535).
     selection: "best_move"   # Move selection is one of "weighted_random", "uniform_random" or "best_move" (but not below the min_weight in the 2nd and 3rd case).
-    max_depth: 100           # Half move max depth.
+    max_depth: 245           # Half move max depth.
   online_moves:
     chessdb_book:
-      enabled: false
+      enabled: true
       min_time: 20
       move_quality: "best"     # One of "all", "good", "best"
-      min_depth: 30            # Only for move_quality: "best"
-      contribute: false
+      min_depth: 50            # Only for move_quality: "best"
+      contribute: true
     lichess_cloud_analysis:
       enabled: false
       min_time: 20
@@ -72,16 +75,12 @@ fake_think_time: false       # Artificially slow down the bot to pretend like it
 rate_limiting_delay: 0       # Time (in ms) to delay after sending a move to prevent "Too Many Requests" errors.
 
 uci_options:               # Arbitrary UCI options passed to the engine.
-    Move Overhead: 200        # Increase if your bot flags games too often.
+#    Move Overhead: 50        # Increase if your bot flags games too often.
     Threads: 2               # Max CPU threads the engine can use.
     Hash: 256                # Max memory (in megabytes) the engine can allocate.
-    SyzygyPath: ./syzygy
-    SyzygyProbeDepth: 50
-    Syzygy50MoveRule: true
-    SyzygyProbeLimit: 7
     Skill Level: 20
-    UCI_ShowWDL: false
-    UCI_Elo  : 2850
+    UCI_ShowWDL: true
+    UCI_Elo  : 3000
 
 correspondence:
     move_time: 60            # Time in seconds to search in correspondence games.
@@ -91,7 +90,7 @@ correspondence:
 
 challenge:                   # Incoming challenges.
   concurrency: 1             # Number of games to play simultaneously.
-  sort_by: "first"           # Possible values: "best" and "first".
+  sort_by: "best"           # Possible values: "best" and "first".
   accept_bot: true           # Accepts challenges coming from other bots.
   only_bot: false            # Accept challenges by bots only.
   max_increment: 50          # Maximum amount of increment to accept a challenge. The max is 180. Set to 0 for no increment.
