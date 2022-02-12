@@ -75,10 +75,6 @@ uci_options:               # Arbitrary UCI options passed to the engine.
     Move Overhead: 50        # Increase if your bot flags games too often.
     Threads: 2               # Max CPU threads the engine can use.
     Hash: 256                # Max memory (in megabytes) the engine can allocate.
-    SyzygyPath: ./syzygy
-    SyzygyProbeDepth: 50
-    Syzygy50MoveRule: true
-    SyzygyProbeLimit: 7
     Skill Level: 20
     UCI_ShowWDL: true
     UCI_Elo  : 3000
