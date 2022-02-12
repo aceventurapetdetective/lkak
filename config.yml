@@ -80,8 +80,8 @@ uci_options:               # Arbitrary UCI options passed to the engine.
     Syzygy50MoveRule: true
     SyzygyProbeLimit: 7
     Skill Level: 20
-    UCI_ShowWDL: false
-    UCI_Elo  : 2850
+    UCI_ShowWDL: true
+    UCI_Elo  : 3000
 
 correspondence:
     move_time: 60            # Time in seconds to search in correspondence games.
