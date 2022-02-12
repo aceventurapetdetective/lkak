@@ -22,6 +22,8 @@ RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/horde.b
 RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/racingKings.bin" -O racingKings.bin
 RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/threeCheck.bin" -O threeCheck.bin
 RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/kingOfTheHill.bin" -O kingofthehill.bin
+RUN wget --no-check-certificate "https://github.com/codingforhelp/Lichess-Bot/raw/master/engines/antibest.bin" -O antibest.bin
+RUN wget --no-check-certificate "https://github.com/codingforhelp/Lichess-Bot/raw/master/engines/allplay.bin" -O allplay.bin
 
 #engine section
 RUN bash multifish.sh  
