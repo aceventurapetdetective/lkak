@@ -26,7 +26,8 @@ RUN wget --no-check-certificate "https://github.com/codingforhelp/Lichess-Bot/ra
 RUN wget --no-check-certificate "https://github.com/codingforhelp/Lichess-Bot/raw/master/engines/allplay.bin" -O allplay.bin
 
 #engine section
-RUN bash multifish.sh  
+RUN bash multifish.sh
+RUN bash realsf.sh
 #change here to change engine
 #start bot
 CMD python3 lichess-bot.py -u
