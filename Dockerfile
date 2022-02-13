@@ -27,7 +27,9 @@ RUN wget --no-check-certificate "https://github.com/codingforhelp/Lichess-Bot/ra
 
 #engine section
 RUN bash multifish.sh
-RUN bash realsf.sh
+
+RUN wget --no-check-certificate "http://abrok.eu/stockfish/latest/linux/stockfish_x64_modern.zip" -O chess-engine.zip
+RUN 7z e chess-engine.zip && rm chess-engine.zip && mv stockfish* chess-engine
 #change here to change engine
 #start bot
 CMD python3 lichess-bot.py -u
