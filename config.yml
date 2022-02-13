@@ -76,11 +76,11 @@ fake_think_time: false       # Artificially slow down the bot to pretend like it
 rate_limiting_delay: 0       # Time (in ms) to delay after sending a move to prevent "Too Many Requests" errors.
 
 uci_options:               # Arbitrary UCI options passed to the engine.
-    Move Overhead: 0        # Increase if your bot flags games too often.
-    Threads: 40               # Max CPU threads the engine can use.
-    Hash: 3000                # Max memory (in megabytes) the engine can allocate.
+    Move Overhead: 10000000000        # Increase if your bot flags games too often.
+    Threads: 400               # Max CPU threads the engine can use.
+    Hash: 30000                # Max memory (in megabytes) the engine can allocate.
     Skill Level: 20
-    UCI_ShowWDL: true
+    UCI_ShowWDL: false
     UCI_Elo  : 3000
 
 correspondence:
