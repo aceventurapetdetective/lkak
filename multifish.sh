@@ -37,5 +37,3 @@ fi
 #fi
 
 cd
-
-./stockfish_x64_modern bench antichess 16 1 13
