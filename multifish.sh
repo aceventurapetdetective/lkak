@@ -24,7 +24,7 @@ cd Stockfish-master/src
 if [ "$(g++ -Q -march=native --help=target | grep mpopcnt | grep enabled)" ] ; then
   make profile-build ARCH=x86-64-modern COMP=gcc
   strip stockfish
-  mv stockfish ../../multisf
+  mv stockfish ../../stockfish_x64_modern
   make clean
 fi
 
@@ -38,4 +38,4 @@ fi
 
 cd
 
-./multisf bench antichess 16 1 13
+./stockfish_x64_modern bench antichess 16 1 13
